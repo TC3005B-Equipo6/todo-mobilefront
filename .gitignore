@@ -43,3 +43,5 @@ app-example
 /android
 
 .vscode
+*storybook.log
+storybook-static

@@ -1,3 +1,4 @@
+import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { FlatList, Pressable, RefreshControl } from "react-native";
 
@@ -39,6 +40,7 @@ const MOCK_TASK_LISTS: TaskList[] = [
 ];
 
 export default function HomeScreen() {
+  const router = useRouter();
   const [lists, setLists] = useState<TaskList[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
@@ -128,9 +130,14 @@ export default function HomeScreen() {
             refreshControl={
               <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
             }
-          />
-        )}
-      </Box>
-    </SafeAreaView>
-  );
-}
+            />
+          )}
+        </Box>
+        <Pressable onPress={() => router.push("/storybook")}>
+          <Text className="text-blue-500 underline mb-4">
+            Go to Storybook
+          </Text>
+        </Pressable>
+      </SafeAreaView>
+    );
+  }
