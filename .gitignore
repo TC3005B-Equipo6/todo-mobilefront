@@ -45,3 +45,5 @@ app-example
 .vscode
 *storybook.log
 storybook-static
+
+.env
