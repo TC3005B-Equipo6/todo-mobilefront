@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "./authService";
 
 const api = axios.create({
-  baseURL: "https://todo-backend-4c3m.onrender.com",
+  baseURL: process.env.EXPO_PUBLIC_API_URL, 
   timeout: 5000,
 });
 
